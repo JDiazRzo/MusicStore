@@ -20,9 +20,10 @@
 
 - Catálogo de instrumentos por categoría
 - Filtros por marca
-- Guitarra del mes con rotación 3D
+- Guitarra del mes con rotación
 - Carrito de compras
-- Animaciones con GSAP
+- Animaciones con GSAP y ScrollTrigger
+- Componentes visuales con React Bits
 
 ---
 
