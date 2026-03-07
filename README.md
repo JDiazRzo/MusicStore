@@ -7,7 +7,7 @@
 
 ---
 
-### 🛠️ Stack
+### ♾️ Stack
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=fff)
@@ -16,7 +16,7 @@
 
 ---
 
-### ✨ Features
+### ♾️ Features
 
 - Catálogo de instrumentos por categoría
 - Filtros por marca
@@ -28,7 +28,7 @@
 
 ### 📖 Documentación completa
 
-[jdiazrzo-musicstore.mintlify.app](https://jdiazrzo-musicstore.mintlify.app/introduction)
+[jdiazrzo-musicstore.mintlify.app](https://jdiazrzo-musicstore.mintlify.app/)
 
 </div>
 
