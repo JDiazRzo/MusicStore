@@ -23,8 +23,8 @@ function NavbarGlass() {
   }, [location.pathname]);
 
   return (
-    <header className={`fixed ${isTop ? "top-6" : "bottom-6"} left-1/2 -translate-x-1/2 z-50`}>
-      <nav ref={navRef} className="flex gap-6 text-white bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl px-6 py-3 shadow-lg">
+    <header className={`fixed ${isTop ? "top-6" : "bottom-6"} left-1/2 -translate-x-1/2 z-50 w-[90vw] md:w-auto`}>
+      <nav ref={navRef} className="flex gap-3 md:gap-6 text-white bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl px-4 md:px-6 py-3 shadow-lg text-sm md:text-base justify-center">
         <Link to="/">Inicio</Link>
         <Link to="/categoria/guitarra">Guitarras</Link>
         <Link to="/categoria/piano">Pianos</Link>

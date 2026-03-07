@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
 import CartPanel from "./components/CartPanel/CartPanel.jsx";
+import Loader from "./components/Loader/Loader.jsx";
 
 function App() {
   
@@ -23,14 +24,18 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home productos={productos} cargando={cargando}/>} />
-        <Route path="/categoria/:nombre" element={<Categoria productos={productos} cargando={cargando}/>} />
-        <Route path="/producto/:id" element={<ProductoDetalle productos={productos} cargando={cargando}/>} />
-      </Routes>
-      <CartPanel/>
-    </BrowserRouter>
+    <>
+      {cargando && <Loader onComplete={() => setCargando(false)} />}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home productos={productos} cargando={cargando}/>} />
+          <Route path="/categoria/:nombre" element={<Categoria productos={productos} cargando={cargando}/>} />
+          <Route path="/producto/:id" element={<ProductoDetalle productos={productos} cargando={cargando}/>} />
+        </Routes>
+        <CartPanel/>
+      </BrowserRouter>
+    </>
+    
   );
 }
 
