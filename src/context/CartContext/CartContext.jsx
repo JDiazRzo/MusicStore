@@ -16,7 +16,7 @@ export function CartProvider({ children }) {
       }
       return [...prev, { ...producto, cantidad: 1 }];
     });
-    setCarritoAbierto(true); // abre el panel al agregar
+    setCarritoAbierto(true); 
   };
 
   const quitarProducto = (id) => {

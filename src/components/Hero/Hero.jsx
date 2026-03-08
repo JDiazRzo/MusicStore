@@ -62,7 +62,7 @@ function Hero() {
         />
       </div>
 
-      {/* Botón arriba derecha */}
+      
       <div ref={btnRef} className="absolute top-8 right-6 md:right-8">
         <button
           onClick={() => document.getElementById("categorias").scrollIntoView({ behavior: "smooth" })}
@@ -72,7 +72,7 @@ function Hero() {
         </button>
       </div>
 
-      {/* Título abajo izquierda */}
+    
       <div ref={titleRef} className="absolute bottom-36 md:bottom-12 left-6 md:left-10">
         <h1 
           className="font-bold leading-none"
@@ -86,7 +86,7 @@ function Hero() {
         </h1>
       </div>
 
-      {/* Texto abajo derecha */}
+     
       <div ref={textRef} className="absolute bottom-36 md:bottom-24 right-6 md:right-10 text-right max-w-[180px] md:max-w-xs">
         <ShinyText
           text={"ENCUENTRA TU SONIDO\nIDEAL CON NOSOTROS"}

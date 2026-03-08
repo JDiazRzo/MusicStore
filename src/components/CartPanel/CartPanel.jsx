@@ -19,7 +19,7 @@ function CartPanel() {
 
   return (
     <>
-      {/* Overlay oscuro */}
+      
       <div
         ref={overlayRef}
         onClick={() => setCarritoAbierto(false)}
@@ -27,13 +27,13 @@ function CartPanel() {
         style={{ opacity: 0, pointerEvents: "none" }}
       />
 
-      {/* Panel */}
+      
       <div
         ref={panelRef}
         className="fixed top-0 right-0 h-full w-full max-w-md bg-[#0e0e0e] border-l border-white/10 z-50 flex flex-col"
         style={{ transform: "translateX(100%)" }}
       >
-        {/* Header */}
+       
         <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
           <h2 className="text-white text-lg font-semibold tracking-wide">Carrito</h2>
           <button
@@ -44,7 +44,7 @@ function CartPanel() {
           </button>
         </div>
 
-        {/* Productos */}
+   
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
           {carrito.length === 0 ? (
             <p className="text-white/30 text-sm text-center mt-20">Tu carrito está vacío</p>
@@ -52,14 +52,14 @@ function CartPanel() {
             carrito.map(prod => (
               <div key={prod.id} className="flex gap-4 bg-white/5 rounded-2xl p-4 border border-white/10">
 
-                {/* Imagen */}
+                
                 <img
                   src={prod.imagen}
                   alt={prod.nombre}
                   className="w-20 h-20 object-contain rounded-xl bg-white/5 p-2"
                 />
 
-                {/* Info */}
+                
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
                     <h3 className="text-white text-sm font-medium">{prod.nombre}</h3>
@@ -68,7 +68,7 @@ function CartPanel() {
                     </p>
                   </div>
 
-                  {/* Cantidad + eliminar */}
+                 
                   <div className="flex items-center justify-between mt-2">
                     <div className="flex items-center gap-3 bg-white/10 rounded-full px-3 py-1">
                       <button
