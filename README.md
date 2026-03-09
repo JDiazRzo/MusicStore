@@ -4,6 +4,7 @@
 
 [![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://tu-url.vercel.app)
 [![Docs](https://img.shields.io/badge/Docs-Mintlify-000000?style=for-the-badge&logo=gitbook&logoColor=white)](https://jdiazrzo-musicstore.mintlify.app/introduction)
+[![Repo](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JDiazRzo/MusicStore)
 
 ---
 
