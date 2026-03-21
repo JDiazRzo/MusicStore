@@ -8,7 +8,7 @@
 
 ---
 
-### 🛠️ Stack
+### ♾️ Stack
 
 **Frontend**
 
@@ -27,7 +27,7 @@
 
 ---
 
-### ✨ Features
+### ♾️ Features
 
 - Product catalog by category
 - Brand filters
@@ -40,7 +40,7 @@
 
 ---
 
-### 📖 Full Documentation
+### ♾️ Full Documentation
 
 [![Docs](https://img.shields.io/badge/Docs-Mintlify-000000?style=for-the-badge&logo=gitbook&logoColor=white)](https://jdiazrzo-musicstore.mintlify.app/)
 
