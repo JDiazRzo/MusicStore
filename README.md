@@ -46,4 +46,4 @@
 
 </div>
 
-![footer](https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=Made%20with%20React%20%26%20Node.js&section=footer&fontAlignY=65&fontSize=30)
+![footer](https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=Made%20with%20React&section=footer&fontAlignY=65&fontSize=30)
