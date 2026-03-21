@@ -31,6 +31,11 @@ function Perfil() {
 
     <div className="relative min-h-screen px-6">
 
+        <button onClick={() => navigate("/")} className="flex items-center gap-2 px-4 py-2 mt-6 ml-6 bg-white/10 backdrop-blur-md text-white text-sm font-medium border border-white/20 rounded-xl hover:bg-white/20 hover:-translate-y-0.5 transition-all duration-200 shadow-lg">
+            <i className="bi bi-arrow-left"></i>
+            Volver a la tienda
+        </button>
+
         <div className="fixed inset-0 -z-10 bg-[#0f0f0f]">
             <Squares speed={0.3} squareSize={30} direction="diagonal" borderColor="#333" hoverFillColor="#222" />
         </div>

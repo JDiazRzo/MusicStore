@@ -35,7 +35,7 @@ function Login() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-6s">
+    <div className="relative min-h-screen flex items-center justify-center px-6d">
       
     
       <div className="fixed inset-0 -z-10 bg-[#0f0f0f]">
