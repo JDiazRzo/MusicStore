@@ -7,10 +7,17 @@
     "light": "#61DAFB",
     "dark": "#3A76D9"
   },
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": ["docs/index"]
-    }
-  ]
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["index"]
+          }
+        ]
+      }
+    ]
+  }
 }
