@@ -16,7 +16,7 @@ function Perfil() {
     }
 
     async function fetchOrdenes() {
-      const res = await fetch("https://musicstore-ew9m.onrender.com", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/ordenes`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

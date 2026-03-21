@@ -26,7 +26,7 @@ function NavbarGlass() {
   }, [location.pathname]);
 
   const handleLogout = async () => {
-    await fetch("http://localhost:3000/api/auth/logout", { method: "POST" });
+    await fetch(`${import.meta.env.VITE_API_URL}/api/auth/logout`, { method: "POST" });
     logout();
     navigate("/");
   };
