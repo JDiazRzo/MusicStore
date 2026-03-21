@@ -25,7 +25,7 @@ function CartPanel() {
       return;
     }
 
-    const res = await fetch("http://localhost:3000/api/ordenes", {
+    const res = await fetch("https://musicstore-ew9m.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ function CartPanel() {
                       onClick={() => quitarProducto(prod.id)}
                       className="text-white/30 hover:text-white transition-colors text-sm"
                     >
-                      Eliminar
+                      Delete
                     </button>
                   </div>
                 </div>

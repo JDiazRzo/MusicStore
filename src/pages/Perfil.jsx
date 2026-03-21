@@ -16,7 +16,7 @@ function Perfil() {
     }
 
     async function fetchOrdenes() {
-      const res = await fetch("http://localhost:3000/api/ordenes", {
+      const res = await fetch("https://musicstore-ew9m.onrender.com", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
