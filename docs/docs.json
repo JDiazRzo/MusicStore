@@ -1,0 +1,16 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Music Store",
+  "colors": {
+    "primary": "#4C8CF5",
+    "light": "#61DAFB",
+    "dark": "#3A76D9"
+  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": ["docs/index"]
+    }
+  ]
+}
