@@ -74,39 +74,39 @@ function Categoria({ productos, cargando }) {
         ) : (
           <main className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 p-10 max-w-[1400px] mx-auto pt-32">
 
-          <aside ref={asideRef} className="relative rounded-2xl h-fit sticky top-8 overflow-hidden border border-white/10">
-            <div className="bg-white/5 backdrop-blur-md p-6">
-              <h1 className="text-2xl mb-6 capitalize font-semibold">{nombre}</h1>
-              <h3 className="text-white/50 text-xs tracking-[0.3em] uppercase mb-5">Filtros</h3>
-              <h4 className="text-sm uppercase tracking-widest text-white/40 mb-3">Marca</h4>
-              <div className="flex flex-col gap-3">
-                {marcas.map((marca) => (
-                  <label key={marca} className="flex items-center gap-3 cursor-pointer group">
-                    <input type="checkbox" onChange={() => toggleMarca(marca)} className="cursor-pointer accent-white" />
-                    <span className="text-white/60 group-hover:text-white transition-colors duration-200 text-sm">
-                      {marca}
-                    </span>
-                  </label>
+            <aside ref={asideRef} className="relative rounded-2xl h-fit sticky top-8 overflow-hidden border border-white/10">
+              <div className="bg-white/5 backdrop-blur-md p-6">
+                <h1 className="text-2xl mb-6 capitalize font-semibold">{nombre}</h1>
+                <h3 className="text-white/50 text-xs tracking-[0.3em] uppercase mb-5">Filtros</h3>
+                <h4 className="text-sm uppercase tracking-widest text-white/40 mb-3">Marca</h4>
+                <div className="flex flex-col gap-3">
+                  {marcas.map((marca) => (
+                    <label key={marca} className="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" onChange={() => toggleMarca(marca)} className="cursor-pointer accent-white" />
+                      <span className="text-white/60 group-hover:text-white transition-colors duration-200 text-sm">
+                        {marca}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </aside>
+
+            <section style={{ position: "relative", overflow: "hidden" }}>
+              <div ref={gridRef} className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-6">
+                {productosFiltrados.map(prod => (
+                  <Link
+                    key={prod.id}
+                    to={`/producto/${prod.id}`}
+                    className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_10px_30px_rgba(255,255,255,0.05)]"
+                  >
+                    <img src={prod.imagen} alt={prod.nombre} className="w-full h-[200px] object-contain mb-4" />
+                    <h3 className="text-base font-medium mb-2">{prod.nombre}</h3>
+                    <p className="text-white/60 text-sm font-semibold">${prod.precio.toLocaleString()}</p>
+                  </Link>
                 ))}
               </div>
-            </div>
-          </aside>
-
-          <section style={{ position: "relative", overflow: "hidden" }}>
-            <div ref={gridRef} className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-6">
-              {productosFiltrados.map(prod => (
-                <Link
-                  key={prod.id}
-                  to={`/producto/${prod.id}`}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_10px_30px_rgba(255,255,255,0.05)]"
-                >
-                  <img src={prod.imagen} alt={prod.nombre} className="w-full h-[200px] object-contain mb-4" />
-                  <h3 className="text-base font-medium mb-2">{prod.nombre}</h3>
-                  <p className="text-white/60 text-sm font-semibold">${prod.precio.toLocaleString()}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
+            </section>
 
           </main>
         )}

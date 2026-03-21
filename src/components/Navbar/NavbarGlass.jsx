@@ -1,13 +1,16 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import { useCart } from "../../context/CartContext/CartContext.jsx";
+import { useAuth } from "../../context/AuthContext/AuthContext.jsx";
 import gsap from "gsap";
 
 function NavbarGlass() {
   const navRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const { carrito, setCarritoAbierto } = useCart();
-  const totalItems = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+  const { usuario, logout } = useAuth();
+  const totalItems = carrito.reduce((acumulado, p) => acumulado + p.cantidad, 0);
 
   const isTop = location.pathname.startsWith("/categoria") || 
                 location.pathname.startsWith("/producto");
@@ -21,6 +24,12 @@ function NavbarGlass() {
     });
     return () => ctx.revert();
   }, [location.pathname]);
+
+  const handleLogout = async () => {
+    await fetch("http://localhost:3000/api/auth/logout", { method: "POST" });
+    logout();
+    navigate("/");
+  };
 
   return (
     <header className={`fixed ${isTop ? "top-6" : "bottom-6"} left-1/2 -translate-x-1/2 z-50 w-[90vw] md:w-auto`}>
@@ -38,6 +47,14 @@ function NavbarGlass() {
             </span>
           )}
         </button>
+        {usuario ? (
+          <>
+            <Link to="/perfil">Perfil</Link>
+            <button onClick={handleLogout}>Salir</button>
+          </>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </nav>
     </header>
   );

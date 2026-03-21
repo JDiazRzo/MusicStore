@@ -1,9 +1,11 @@
 import { useEffect, useRef } from "react";
 import { useCart } from "../../context/CartContext/CartContext.jsx";
+import { useAuth } from "../../context/AuthContext/AuthContext.jsx";
 import gsap from "gsap";
 
 function CartPanel() {
-  const { carrito, carritoAbierto, setCarritoAbierto, quitarProducto, cambiarCantidad, total } = useCart();
+   const { carrito, carritoAbierto, setCarritoAbierto, quitarProducto, cambiarCantidad, total, setCarrito } = useCart();
+  const { token } = useAuth();
   const panelRef = useRef(null);
   const overlayRef = useRef(null);
 
@@ -16,6 +18,35 @@ function CartPanel() {
       gsap.to(overlayRef.current, { opacity: 0, duration: 0.3, pointerEvents: "none" });
     }
   }, [carritoAbierto]);
+
+  const handleCheckout = async () => {
+    if (!token) {
+      alert("Debes iniciar sesión para realizar una compra");
+      return;
+    }
+
+    const res = await fetch("http://localhost:3000/api/ordenes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ items: carrito }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert("Error al procesar la orden: " + data.error);
+      return;
+    }
+
+    setCarrito([]);
+    setCarritoAbierto(false);
+    alert("¡Compra realizada con éxito!");
+  };
+
+  
 
   return (
     <>
@@ -107,7 +138,7 @@ function CartPanel() {
               <span className="text-white text-xl font-semibold">${total.toLocaleString()}</span>
             </div>
             <button className="w-full py-4 bg-white text-black font-semibold rounded-full text-sm tracking-widest uppercase hover:bg-white/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
-              onClick={() => alert("Realizando compra")}
+              onClick={handleCheckout}
             
             >
               Proceder al pago
