@@ -31,6 +31,7 @@
 
 - Product catalog by category
 - Brand filters
+- Guitar of the month with 3D rotation
 - Shopping cart with Context API
 - User authentication with JWT
 - Order history and checkout
